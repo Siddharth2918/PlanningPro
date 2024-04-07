@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const fetchUser = (id, setDayPlans)=>{
-    axios.get(`http://localhost:3000/users/getUser/${id}`)
+    axios.get(`https://planning-pro-backend.vercel.app/users/getUser/${id}`)
     .then((res)=>{
         console.log(res.data.userDayPlans)
         // setDayPlans(res.data.userDayPlans);
