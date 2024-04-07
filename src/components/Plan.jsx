@@ -6,7 +6,7 @@ const Plan = ({element})=>{
     const id = element._id;
     const [tasks, setTasks] = useState([]);
     useEffect(()=>{
-        axios.get(`http://localhost:3000/dayPlans/getDayPlan/${id}`)
+        axios.get(`https://planning-pro-backend.vercel.app/dayPlans/getDayPlan/${id}`)
         .then((res)=>{
             setTasks(res.data.tasksForTheDay);
         })
@@ -47,7 +47,7 @@ const AddTaskForm = ({setOpenForm, id})=>{
     const [TaskDescription, setTaskDescription] = useState("");
 
     const createTask = ()=>{
-        axios.post(`http://localhost:3000/tasks/addTask`, {
+        axios.post(`https://planning-pro-backend.vercel.app/tasks/addTask`, {
             dayPlanId: id,
             title: TaskTitle,
             description: TaskDescription,
